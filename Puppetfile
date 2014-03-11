@@ -175,6 +175,7 @@ cisco_module_prefix = "#{base_url}/CiscoSystems/puppet-"
   'apt-cacher-ng',
   'collectd',
   'graphite',
+  'pip',
   'dnsmasq',
   'naginator'
 ].each do |module_name|

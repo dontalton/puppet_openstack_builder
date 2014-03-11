@@ -34,6 +34,7 @@ nova
 ntp
 openstack
 openstack-ha
+pip
 postgresql
 puppet
 puppetdb

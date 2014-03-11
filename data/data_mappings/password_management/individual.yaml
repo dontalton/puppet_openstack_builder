@@ -18,7 +18,6 @@ network_db_password:
   - quantum::db::postgresql::password
   - neutron::db::mysql::password
   - neutron::db::postgresql::password
-  - neutron::plugins::cisco::database_pass
 database_root_password:
   - mysql::config::root_password
   - postgresql::config::postgres_password
@@ -37,7 +36,6 @@ admin_token:
 admin_password:
   - keystone::roles::admin::password
   - openstack::auth_file::admin_password
-  - neutron::plugins::cisco::keystone_password
 network_service_password:
   - quantum::keystone::auth::password
   - neutron::keystone::auth::password

@@ -12,10 +12,6 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-# Default to using the Cisco install.
-# To override this, comment out the next line
-export vendor=cisco
-
 # Install type to use to get the puppet modules
 # Options: git(default) or deb
 export install_type= "${install_type:-git}"
@@ -112,11 +108,7 @@ nova::compute::vncserver_proxyclient_address: "${build_server_ip}"
 quantum::agents::ovs::local_ip: "%{ipaddress}"
 neutron::agents::ovs::local_ip: "%{ipaddress}"
 EOF
-
-  # disable cobbler for AIO
-  sed -i -e "s/- coi::profiles::cobbler_server/#- coi::profiles::cobbler_server/" /root/puppet_openstack_builder/data/class_groups/build.yaml
   fi
-
   cd puppet_openstack_builder
 
   if [ "${install_type}" == "deb" ] ; then
